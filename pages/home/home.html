@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Unit price savings Calculator</h1>
+  <p>
+    Our unit price calculator is the ultimate shopping calculator. Compare two items and get the best deal! 
+
+    With the unit price calculator, you can compare items with different price per pound, price per ounce, or any other weight or volume unit.
+  </p>
+  <p>
+   Source: https://www.omnicalculator.com/everyday-life/unit-price
+  </p>
+<br />
+
+<ion-label>
+  <h2>Option A:</h2>
+</ion-label>
+<ion-item>
+  <ion-label>Volume in Mililiters:</ion-label>
+   <ion-input type="number" [(ngModel)] ="Volume_ML"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Cost:</ion-label>
+   <ion-input type="number" [(ngModel)] ="CostA"></ion-input>
+  </ion-item>
+  
+<ion-label>
+  <h2>Option B:</h2>
+</ion-label>
+<ion-item>
+  <ion-label>Volume in Liters:</ion-label>
+  <ion-input type="number" [(ngModel)] ="Volume_L"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Cost:</ion-label>
+  <ion-input type="number" [(ngModel)] ="CostB"></ion-input>
+</ion-item>
+
+<button ion-button color="secondary" (click)="calculateUnitPrice ()"
+>CALCULATE</button>
+
+<ion-item *ngIf="UnitPriceA">
+  <h2>Unit Price (A): {{UnitPriceA}}<code> per Liter </code></h2>
+  <h2>Unit Price (B): {{UnitPriceB}}<code> per Liter </code></h2>
+  <h2>Savings: {{Savings}}<code></code></h2>
+</ion-item>
